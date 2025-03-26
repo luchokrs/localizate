@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_25_010510) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_25_014501) do
   create_table "stores", force: :cascade do |t|
+    t.string "name"
+    t.string "rut"
+    t.string "street_name"
+    t.integer "ext_number"
+    t.string "int_number"
+    t.string "geolocation"
+    t.string "business_name"
+    t.integer "user_id", null: false
+    t.string "email"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -25,4 +36,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_010510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "stores", "users"
 end

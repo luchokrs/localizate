@@ -48,7 +48,7 @@
 
   <div>
     <%= form.label :admin_user_id, style: "display: block" %>
-    <%= form.number_field :admin_user_id %>
+    <%= form.collection_select :admin_user_id, User.all, :id, :name, { prompt: "Selecciona un usuario" } %>
   </div>
 
   <div>
