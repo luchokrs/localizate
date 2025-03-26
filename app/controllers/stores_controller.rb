@@ -65,6 +65,6 @@ class StoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def store_params
-      params.expect(store: [ :name, :rut, :street_name, :ext_number, :int_number, :geolocation, :business_name, :admin_user_id, :email, :status ])
+      params.expect(store: [ :name, :rut, :street_name, :ext_number, :int_number, :geolocation, :business_name, :user_id, :email, :status ])
     end
 end
