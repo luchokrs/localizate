@@ -1,0 +1,18 @@
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/home/lucho-krs/snap/code/186/.local/share/mise/installs/ruby/3.4.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-fir4lw sitelibdir\=./.gem.20250328-28488-fir4lw clean
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-fir4lw sitelibdir\=./.gem.20250328-28488-fir4lw
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-fir4lw sitelibdir\=./.gem.20250328-28488-fir4lw install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20250328-28488-fir4lw/skiptrace/internal
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-fir4lw sitelibdir\=./.gem.20250328-28488-fir4lw clean

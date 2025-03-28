@@ -1,0 +1,19 @@
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+/home/lucho-krs/snap/code/186/.local/share/mise/installs/ruby/3.4.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-j27tbe sitelibdir\=./.gem.20250328-28488-j27tbe clean
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-j27tbe sitelibdir\=./.gem.20250328-28488-j27tbe
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-j27tbe sitelibdir\=./.gem.20250328-28488-j27tbe install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250328-28488-j27tbe/debug
+
+current directory: /home/lucho-krs/Documentos/garage-labs/localizate/vendor/bundle/ruby/3.4.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250328-28488-j27tbe sitelibdir\=./.gem.20250328-28488-j27tbe clean
