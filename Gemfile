@@ -69,3 +69,5 @@ end
 gem 'sidekiq'
 
 gem 'whenever', require: false
+
+gem "dotenv-rails", "~> 3.1"
