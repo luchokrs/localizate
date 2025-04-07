@@ -49,12 +49,16 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    @user.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to users_path, status: :see_other, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
+    user = User.find(params[:id])
+  
+    # Desvincular la tienda antes de eliminar al usuario
+    if user.store
+      user.store.update(user_id: nil)
     end
+  
+    user.destroy
+    flash[:notice] = "Usuario eliminado correctamente."
+    redirect_to users_path
   end
 
   private

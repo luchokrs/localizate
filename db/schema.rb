@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_25_014501) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_03_190956) do
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "rut"
@@ -19,7 +19,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_014501) do
     t.string "int_number"
     t.string "geolocation"
     t.string "business_name"
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.string "email"
     t.integer "status", default: 0
     t.datetime "created_at", null: false

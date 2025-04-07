@@ -18,18 +18,42 @@ class WebhookController < ApplicationController
   def receive_message
     body = JSON.parse(request.body.read)
     Rails.logger.info "Incoming webhook message: #{body.to_json}"
-
+    
     message = body.dig("entry", 0, "changes", 0, "value", "messages", 0)
-
-    if message && message["type"] == "text"
+    Rails.logger.info "message: #{message}"
+    
+    if message
       phone_number_id = body.dig("entry", 0, "changes", 0, "value", "metadata", "phone_number_id")
-      sender = message["from"]
-      text = message.dig("text", "body")
-
-      send_whatsapp_message(phone_number_id, sender, text, message["id"])
-      mark_message_as_read(phone_number_id, message["id"])
+      sender_phone = message["from"]
+      
+      # Manejar mensaje interactivo (botón presionado)
+      if message["type"] == "interactive" && message.dig("interactive", "type") == "button_reply"
+        button_id = message.dig("interactive", "button_reply", "id")
+        Rails.logger.info "button_id>>: #{button_id}"
+        
+        user = User.find_by(phone: sender_phone)
+  
+        if user&.store
+          store = user.store
+  
+          # Determinar el nuevo estado según el botón presionado
+          new_status = (button_id == "open_business") ? 1 : 2
+  
+          # Actualizar el estado de la tienda
+          store.update(status: new_status)
+  
+          Rails.logger.info "Estado de tienda #{store.name} actualizado a #{store.status}"
+          
+          # Responder al usuario
+          send_whatsapp_message(phone_number_id, sender_phone, "Tu tienda ha sido marcada como #{new_status == 2 ? 'Cerrada' : "Abierta"}.", message["id"])
+        else
+          Rails.logger.warn "No se encontró un usuario con el número #{sender_phone}"
+        end
+  
+        mark_message_as_read(phone_number_id, message["id"])
+      end
     end
-
+  
     render json: { status: "ok" }, status: 200
   end
 
@@ -42,7 +66,7 @@ class WebhookController < ApplicationController
     request.body = {
       messaging_product: "whatsapp",
       to: to,
-      text: { body: "Echo: #{text}" },
+      text: { body: "#{text}" },
       context: { message_id: message_id }
     }.to_json
 

@@ -3,7 +3,7 @@ class WhatsappService
   base_uri 'https://graph.facebook.com/v22.0/526736893865730'
 
   def initialize
-    @api_key = "EAAOfNGKDhYsBO0uZBelh3aVb6xgOzPCgbE9Q57I2fV5jeqpKjeqX00Vt3trNq4aGe39TmQFvowoY1okjqkUPHvfssorm0gISqCrmZAyoiQ2ZAwu1Q9vmebi2ZChENMEPr2tDr6ZC9pu41YpMqwQ1PNzSqWkzq3BCGa1h4iKlvhy5YxH6ZB8oZCzDE3TviDrXVeB6PVABCWO8ktTZC51uzl42XoEUPZBmuzPWGpb9z3qHF"  # Tu token de acceso
+    @api_key = ENV["WEBHOOK_VERIFY_TOKEN"]
   end
 
   def send_interactive_message(phone_number)
