@@ -38,9 +38,10 @@ class WebhookController < ApplicationController
   
           # Determinar el nuevo estado según el botón presionado
           new_status = (button_id == "open_business") ? 1 : 2
-  
+          
           # Actualizar el estado de la tienda
-          store.update(status: new_status)
+          store.update(status: new_status, last_response_at: Time.current)
+          # store.update(status: new_status)
   
           Rails.logger.info "Estado de tienda #{store.name} actualizado a #{store.status}"
           

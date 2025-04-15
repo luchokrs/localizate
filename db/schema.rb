@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_03_190956) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_10_150707) do
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "rut"
@@ -24,6 +24,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_03_190956) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "last_message_sent_at"
+    t.datetime "last_response_at"
     t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
