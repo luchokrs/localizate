@@ -1,33 +1,9 @@
-# class Store < ApplicationRecord
-#   belongs_to :user
-
-#   # Constantes para el status
-#   STATUS_OPEN = 1
-#   STATUS_CLOSED = 2
-
-#   # Métodos auxiliares para status
-#   def open?
-#     status == STATUS_OPEN
-#   end
-
-#   def closed?
-#     status == STATUS_CLOSED
-#   end
-
-#   def response_expired?
-#     last_message_sent_at.present? &&
-#       (last_response_at.nil? || last_response_at < last_message_sent_at) &&
-#       last_message_sent_at < 1.minute.ago
-#   end
-# end
 class Store < ApplicationRecord
   belongs_to :user
 
-  # Constantes para el status
   STATUS_OPEN = 1
   STATUS_CLOSED = 2
 
-  # Métodos auxiliares para status
   def open?
     status == STATUS_OPEN
   end

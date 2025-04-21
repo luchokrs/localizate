@@ -8,7 +8,7 @@ every 1.day, at: '8:00 am' do
   custom_runner "WhatsappBroadcastWorker.perform_async"
 end
 
-every 20.minutes do
+every 1.day, at: '9:05 am' do
   custom_runner "CloseUnresponsiveStoresWorker.perform_async"
 end
 
